@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Richiesta Preventivo Assicurativo</title>  
+  <link rel="icon" href="https://img.icons8.com/ios-filled/50/insurance.png" type="image/png">
+
+  <link rel="stylesheet" href="stile.css">
+</head>
+<body>
+  <h1>Richiedi il tuo Preventivo</h1>
+  <p style="text-align:center; color:#555;">Compila il modulo per ricevere un preventivo personalizzato. Ti risponderò il prima possibile!</p>
+
+ <form id="formPreventivo" action="https://formspree.io/f/xbloevrj" method="POST">
+
+    <label>Nome:
+      <input type="text" name="nome" required>
+    </label>
+
+    <label>Cognome:
+      <input type="text" name="cognome" required>
+    </label>
+
+    <label>Codice Fiscale:
+      <input type="text" name="cf" required>
+    </label>
+
+    <label>Telefono:
+      <input type="tel" name="telefono" required>
+    </label>
+
+    <label>Targa Veicolo:
+      <input type="text" name="targa" required>
+    </label>
+
+    <label>Garanzie richieste:</label>
+    <textarea name="garanzie" rows="4" placeholder="Scrivi qui le garanzie che desideri (es. RC, Furto, Kasko...)" required></textarea>
+
+    <label>Carica Libretto - Fronte:</label>
+    <input type="hidden"
+           role="uploadcare-uploader"
+           name="libretto_fronte"
+           data-public-key="d60e079e2a7caa3ea2a1" />
+
+    <label>Carica Libretto - Retro:</label>
+    <input type="hidden"
+           role="uploadcare-uploader"
+           name="libretto_retro"
+           data-public-key="d60e079e2a7caa3ea2a1" />
+
+    <button type="submit">Invia richiesta</button>
+  </form>
+
+  <script src="script.js"></script>
+
+  <!-- Uploadcare widget -->
+  <script>
+    UPLOADCARE_PUBLIC_KEY = 'd60e079e2a7caa3ea2a1';
+  </script>
+  <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+
+</body>
+</html>
